@@ -5,16 +5,14 @@ import TodoTask from './TodoTask';
 class Todos extends Component {
   render() {
     return (
-      <ul>
+      <React.Fragment>
         {/* {console.log(this.props.todotasks)} */}
         {this.props.todotasks.map(task => {
           return (
-            <li key={task.id}>
-              <TodoTask taskData={task} toggleTodoTask={this.props.toggleTodos}/>
-            </li>
+            <TodoTask key={task.id} taskData={task} toggleTodoTask={this.props.toggleTodos}/>
           )
         })}
-      </ul>
+      </React.Fragment>
     );
   }
 }
