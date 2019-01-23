@@ -25,7 +25,7 @@ class TodoTask extends Component {
     return (
       <div style={itemSt()}>
         {/* {console.log(this.props.taskData)} */}
-        <input type='checkbox' />{' '}
+        <input type='checkbox' onChange={this.props.toggleTodoTask.bind(this,id)}/>{' '}
         {title}
         <button style={btnSt}>X</button>
       </div>

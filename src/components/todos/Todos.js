@@ -10,7 +10,7 @@ class Todos extends Component {
         {this.props.todotasks.map(task => {
           return (
             <li key={task.id}>
-              <TodoTask taskData={task}/>
+              <TodoTask taskData={task} toggleTodoTask={this.props.toggleTodos}/>
             </li>
           )
         })}

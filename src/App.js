@@ -33,12 +33,24 @@ class App extends Component {
         },
       ]
     }
+    this.toggleTask = this.toggleTask.bind(this);
+  }
+  toggleTask(id){
+    // console.log(id)
+    this.setState({
+      todolist : this.state.todolist.map(task => {
+        if(task.id === id){
+          task.complete = !task.complete
+        }
+        return task
+      })
+    })
   }
   render() {
     return (
       <div className="App">
         <Header />
-        <Todos todotasks = {this.state.todolist}/>
+        <Todos todotasks = {this.state.todolist} toggleTodos={this.toggleTask}/>
       </div>
     );
   }
