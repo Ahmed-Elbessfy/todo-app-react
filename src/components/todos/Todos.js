@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import TodoTask from './TodoTask';
 
 class Todos extends Component {
   render() {
@@ -9,7 +10,7 @@ class Todos extends Component {
         {this.props.todotasks.map(task => {
           return (
             <li key={task.id}>
-              
+              <TodoTask taskData={task}/>
             </li>
           )
         })}
