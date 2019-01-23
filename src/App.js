@@ -38,7 +38,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <Todos />
+        <Todos todotasks = {this.state.todolist}/>
       </div>
     );
   }
