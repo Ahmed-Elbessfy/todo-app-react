@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 
-
 import Header from './components/layout/Header';
 import Todos from './components/todos/Todos';
 import Addtask from './components/todos/Addtask';
@@ -36,6 +35,7 @@ class App extends Component {
     }
     this.toggleTask = this.toggleTask.bind(this);
     this.delTask = this.delTask.bind(this);
+    this.addNewTask = this.addNewTask.bind(this);
   }
 
   //Toggle completing task status
@@ -58,11 +58,23 @@ class App extends Component {
       todolist : [...this.state.todolist.filter(task => task.id !== id)]
     })
   }
+
+  //Add new task
+  addNewTask(title){
+    // console.log(title)    
+    this.setState({ 
+      todolist : [...this.state.todolist, {
+        id: uuid.v4(),
+        title,
+        complete: false
+      }]
+    })
+  }
   render() {
     return (
       <div className="App">
         <Header />
-        <Addtask />
+        <Addtask newTaskTitle={this.addNewTask} />
         <Todos 
           todotasks = {this.state.todolist}
           toggleTodos = {this.toggleTask}
