@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import PropTypes from 'prop-types';
 class Addtask extends Component {
   constructor(props){
     super(props);
@@ -38,4 +38,8 @@ class Addtask extends Component {
   }
 }
 
+
+Addtask.prototypes ={
+  newTaskTitle: PropTypes.func.isRequred,
+}
 export default Addtask;

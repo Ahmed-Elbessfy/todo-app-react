@@ -35,7 +35,9 @@ class TodoTask extends Component {
 }
 
 TodoTask.propTypes = {
-taskData: PropTypes.object.isRequired
+taskData: PropTypes.object.isRequired,
+toggleTodoTask : PropTypes.func.isRequired,
+delTodoTask : PropTypes.func.isRequired,
 };
 
 export default TodoTask;
