@@ -4,6 +4,7 @@ import './App.css';
 
 import Header from './components/layout/Header';
 import Todos from './components/todos/Todos';
+import Addtask from './components/todos/Addtask';
 
 import uuid from 'uuid';
 class App extends Component {
@@ -49,7 +50,8 @@ class App extends Component {
       })
     })
   }
-  //Delete task 
+
+  //Delete task
   delTask(id){
     // console.log(id)
     this.setState({
@@ -60,6 +62,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
+        <Addtask />
         <Todos 
           todotasks = {this.state.todolist}
           toggleTodos = {this.toggleTask}

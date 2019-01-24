@@ -14,3 +14,13 @@ body {
 a{
   text-decoration: none;
 }
+
+.btn{
+  padding: 10px;
+  background: #10107b;
+  color:#fff;
+}
+
+.btn:hover{
+  background-color: #1d1dbd
+}
