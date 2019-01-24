@@ -18,7 +18,8 @@ class TodoTask extends Component {
       color: '#fff',
       padding:'5px',
       borderRadius : '3px',
-      float: 'right'
+      float: 'right',
+      cursor: 'pointer'
     }
 
     const {id,title} = this.props.taskData;
@@ -27,7 +28,7 @@ class TodoTask extends Component {
         {/* {console.log(this.props.taskData)} */}
         <input type='checkbox' onChange={this.props.toggleTodoTask.bind(this,id)}/>{' '}
         {title}
-        <button style={btnSt}>X</button>
+        <button style={btnSt} onClick={this.props.delTodoTask.bind(this,id)}>X</button>
       </div>
     );
   }

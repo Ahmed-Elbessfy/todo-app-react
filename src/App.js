@@ -34,7 +34,10 @@ class App extends Component {
       ]
     }
     this.toggleTask = this.toggleTask.bind(this);
+    this.delTask = this.delTask.bind(this);
   }
+
+  //Toggle completing task status
   toggleTask(id){
     // console.log(id)
     this.setState({
@@ -46,11 +49,22 @@ class App extends Component {
       })
     })
   }
+  //Delete task 
+  delTask(id){
+    // console.log(id)
+    this.setState({
+      todolist : [...this.state.todolist.filter(task => task.id !== id)]
+    })
+  }
   render() {
     return (
       <div className="App">
         <Header />
-        <Todos todotasks = {this.state.todolist} toggleTodos={this.toggleTask}/>
+        <Todos 
+          todotasks = {this.state.todolist}
+          toggleTodos = {this.toggleTask}
+          delTodos = {this.delTask}
+        />
       </div>
     );
   }
