@@ -12,7 +12,7 @@ const Header = () => {
   return (
     <header style={headerStyle}>
       <h1>To-Do App</h1>
-      <NavLink to='/' className='navlinkStyle'>home</NavLink> | <NavLink to='/about' className='navlinkStyle'>about</NavLink>
+      <NavLink exact to='/' className='navlinkStyle'>home</NavLink> | <NavLink to='/about' className='navlinkStyle'>about</NavLink>
     </header>
   )
 }
