@@ -7,6 +7,7 @@ import Addtask from './components/todos/Addtask';
 
 // import uuid from 'uuid';
 import axios from 'axios';
+import {BrowserRouter, Route} from 'react-router-dom'
 class App extends Component {
   constructor(props){
     super(props);
@@ -71,15 +72,22 @@ class App extends Component {
   }
   render() {
     return (
-      <div className="App">
-        <Header />
-        <Addtask newTaskTitle={this.addNewTask} />
-        <Todos 
-          todotasks = {this.state.todolist}
-          toggleTodos = {this.toggleTask}
-          delTodos = {this.delTask}
-        />
-      </div>
+      <BrowserRouter>
+        <div className="App">
+          <Header />
+          <Route exact path='/' render= {props => (
+            <React.Fragment>
+              <Addtask newTaskTitle={this.addNewTask} />
+              <Todos 
+                todotasks = {this.state.todolist}
+                toggleTodos = {this.toggleTask}
+                delTodos = {this.delTask}
+              />
+            </React.Fragment>
+          )} />
+          <Route path='/about' component={About} />
+        </div>
+      </BrowserRouter>
     );
   }
 }

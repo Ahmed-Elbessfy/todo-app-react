@@ -24,3 +24,13 @@ a{
 .btn:hover{
   background-color: #1d1dbd
 }
+
+.navlinkStyle {
+  color: #afafaf;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.navlinkStyle.active {
+  color: #fff
+}
