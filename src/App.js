@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-
+import About from './components/pages/About';
 import Header from './components/layout/Header';
 import Todos from './components/todos/Todos';
 import Addtask from './components/todos/Addtask';
